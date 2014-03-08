@@ -50,10 +50,61 @@
 
 	<hr/>
 
-	<div id="rotator">
-		Rotator Here
+	<div id="">
+      <h4><span id="rotator_title">High Command Katarina</span></h4>
+      <p><span id="rotator_desc">Oat cake macaroon souffle cupcake chupa chups chocolate bar bear claw dragee lemon drops.</span></p>
+      <img id="rotator_img" src="../img/kat_4.jpg" />
 	</div>
 </div>
+<script>
+  function rotate() {
+    var rot_title = document.getElementById('rotator_title');
+    var rot_desc = document.getElementById('rotator_desc');
+    var rot_img = document.getElementById('rotator_img');
+    var count = 1;
+    
+    //continuously polling function
+    window.setInterval(function(){
+      switch (count) {
+          case 1: {
+            rot_title.innerHTML = "Katarina";
+            rot_desc.innerHTML = "Fruitcake bonbon donut jelly-o brownie biscuit marzipan pie.";
+            rot_img.src = "../img/kat_" + count + ".jpg";
+            break;  
+          }
+          case 2: {
+            rot_title.innerHTML = "Red Card Katarina";
+            rot_desc.innerHTML = "Cheesecake marzipan cupcake biscuit candy canes pudding.";
+            rot_img.src = "../img/kat_" + count + ".jpg";
+            break;  
+          }
+          case 3: {
+            rot_title.innerHTML = "Kitty Cat Katarina";
+            rot_desc.innerHTML = "Applicake topping halvah lemon drops wypas cotton candy.";
+            rot_img.src = "../img/kat_" + count + ".jpg";
+            break;  
+          }
+          case 4: {
+            rot_title.innerHTML = "High Command Katarina";
+            rot_desc.innerHTML = "Oat cake macaroon souffle cupcake chupa chups chocolate bar bear claw dragee lemon drops.";
+            rot_img.src = "../img/kat_" + count + ".jpg";
+            break;  
+          }
+      }
+      
+      //reset counter
+      if (count == 4) {
+        count = 1; 
+      } else {
+        count++; 
+      }
+    }, 3000);
+  }
+  
+  //start timer when browser finishes page load
+  window.onload = rotate;
+  
+</script>
 
 </body>
 </html>
